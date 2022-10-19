@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>My book shelf</title>
+
+    <link rel="stylesheet" th:href="@{/images/main.css}"/>
+
+</head>
+
+
+<body>
+<div class="main_conainer">
+    <div class="flex_container">
+        <div class="left_container">
+            <h1>
+                Books in data base
+            </h1>
+            <table id="books">
+                <div class="lable_for_list">
+                    <div class="first_colum border_stye">id
+                    </div>
+                    <div class="second_colum border_stye">author
+                    </div>
+                    <div class="second_colum border_stye">title
+                    </div>
+                    <div class="first_colum border_stye">size
+                    </div>
+                </div>
+
+                <div class="lable_for_list" th:each="book : ${bookList}">
+                    <div class="first_colum" th:text="${book.id}">sd
+                    </div>
+                    <div class="second_colum" th:text="${book.author}">sd
+                    </div>
+                    <div class="second_colum" th:text="${book.title}">sd
+                    </div>
+                    <div class="first_colum" th:text="${book.size}">sd
+                    </div>
+                </div>
+            </table>
+        </div>
+        <div class="right_contaier">
+            <div class="for_bacground">
+                <h1>
+                    add a book
+                </h1>
+
+                <form method="post" th:action="@{/books/save}" th:object="${book}">
+                    <div class="lable_for_list add_blok">
+
+                        <div class="second_colum_add">
+                            <input class="for_input" placeholder="author" th:field="*{author}" type="text">
+                            <ul>
+                                <li class="error" th:each="err : ${#fields.errors( 'author')}" th:text="${err}"></li>
+                            </ul>
+                        </div>
+                        <div class="second_colum_add">
+                            <input class="for_input" placeholder="book_title" th:field="*{title}" type="text">
+                            <ul>
+                                <li class="error" th:each="err : ${#fields.errors( 'title')}" th:text="${err}"/>
+                            </ul>
+                        </div>
+                        <div class="first_colum_add">
+                            <input class="for_input" placeholder="size (pages)" th:field="*{size}" type="text">
+                            <ul>
+                                <li class="error" th:each="err : ${#fields.errors( 'size')}" th:text="${err}"/>
+                            </ul>
+
+                        </div>
+                        <div class="after_button">
+                            <input  class="custom_buttom"  type="submit" value="save" placeholder="add">
+
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="horizontal_container">
+
+                <div class="for_remove for_bacground">
+                    <p>
+                        remove book by id
+                    </p>
+                    <form method="post" th:action="@{/books/remove}" th:object="${bookIdToRemove}">
+                        <div class="lable_for_list add_blok">
+                            <div class="verticale_container">
+                                <div class="after_button">
+                                    <input class="custom_buttom"  type="submit" value="remove" placeholder="remove">
+
+                                </div>
+                                <input class="for_input for_last_blok" placeholder="id number" th:field="*{id}"
+                                       type="text">
+                                <ul>
+                                    <li class="error" th:each="err : ${#fields.errors( 'id')}" th:text="${err}">
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </form>
+                </div>
+
+                <div class="for_upload for_bacground">
+                    <p>
+                        upload file
+                    </p>
+                    <form enctype="multipart/form-data" method="post" th:action="@{/books/uploadFile}"
+                          th:object="${uploadedFile}">
+                        <div class="lable_for_list add_blok">
+                            <div class="verticale_container">
+                                <div class="after_button">
+                                    <input class="custom_buttom" type="submit" value="Upload" placeholder="Upload">
+
+                                </div>
+                                <div >
+                                    <input class="custom_buttom for_upload_field" name="file" type="file"/>
+                                    <p th:if="${#fields.hasErrors()}">file not found</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="for_remove for_bacground">
+                    <p>
+                        remove byregex
+                    </p>
+                    <form method="post" th:action="@{/books/removeByRegex}" th:object="${removeByRegex}">
+                        <div class="lable_for_list add_blok">
+                            <div class="verticale_container">
+                                <div class="after_button">
+                                    <input class="custom_buttom" type="submit" value="remove by regex" placeholder="remove">
+
+                                </div>
+                                <input class="for_input for_last_blok" placeholder="regex" th:field="*{regex}" th:name="regex"
+                                       type="text">
+
+                                <ul>
+                                    <li class="error" th:each="err : ${#fields.errors( 'regex')}"
+                                        th:text="${err}"></li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="root_container">
+</div>
+
+</body>
+
+</html>

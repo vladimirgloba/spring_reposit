@@ -1,0 +1,193 @@
+.flex_container {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    border: 10px;
+    border-color: black;
+    margin: auto;
+    padding-top: 30px;
+    justify-content: space-around;
+}
+
+.right_contaier {
+    width: 52%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.for_bacground {
+    border-style: solid;
+    border-color: rgb(101, 146, 206);
+    background-color: aqua;
+    border-width: 5px;
+    border-radius: 10px;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.verticale_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.for_last_blok {
+    width: 85%;
+}
+
+.horizontal_container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.margin_for_buttom {
+    margin-bottom: 10px;
+}
+
+.for_remove {
+    width: 25%;
+}
+
+.for_upload {
+    width: 55%;
+}
+
+form {
+    max-width: 96%;
+}
+
+.add_blok {
+    min-height: 200px;
+}
+
+.left_container {
+    background-color: aqua;
+    width: 42%;
+    padding: 10px;
+    border: 5px;
+    border-radius: 10px;
+    border-color: rgb(101, 146, 206);
+    border-style: solid;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.for_input {
+    display: block;
+    max-width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.first_colum {
+    width: 10%;
+    text-align: center;
+    font-size: 22px;
+    padding: 10px, auto;
+}
+
+.border_stye {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+
+.second_colum {
+    width: 40%;
+    text-align: center;
+    font-size: 22px;
+    padding: 10px, auto;
+}
+
+.lable_for_list {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+    justify-content: space-between
+}
+
+.main_conainer {
+    width: 95%;
+    margin: auto;
+}
+
+.second_colum_add {
+    text-align: center;
+    font-size: 22px;
+    width: 25%;
+}
+
+.first_colum_add {
+    text-align: center;
+    font-size: 22px;
+    width: 15%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+.error{
+color: red;
+}
+.custom_buttom {
+    display: inline-block;
+    text-shadow: 1px 1px #fff;
+    text-decoration: none;
+    padding: .3em 1em;
+    border: 1px solid #aaa;
+    border-radius: 100px;
+    outline: none;
+    background: #d6dbbf no-repeat;
+    background-image: linear-gradient(to left, #aaa, #aaa), linear-gradient(to left, #feffe8, #feffe8), linear-gradient(#feffe8, #d6dbbf);
+    background-position: calc(100% - 2.7em) 0, calc(100% - 2.7em + 1px) 0, 0 0;
+    background-size: 1px 100%, 1px 100%, auto auto;
+    overflow: hidden;
+}
+.after_button {
+margin-bottom: 15px;
+}
+.for_upload_field {
+    max-width: 78%;
+}
+.custom_buttom:after {
+    content: "\bb";
+    position: relative;
+    bottom: 0;
+    display: inline-block;
+    margin-left: 1.4em;
+    vertical-align: middle;
+    font-family: "Times", "Times New Roman", "serif", "sans-serif", "EmojiSymbols";
+    font-weight: 700;
+    font-size: 140%;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.custom_buttom:hover {
+    background-color: #fdfd9f;
+    background-image: linear-gradient(to left, #aaa, #aaa), linear-gradient(to left, #feffe8, #feffe8), linear-gradient(#fffce7, #fdfd9f);
+}
+
+.custom_buttom:active:after {
+    bottom: -1.2em;
+    transition: .3s;
+}
