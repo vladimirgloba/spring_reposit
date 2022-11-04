@@ -1,0 +1,19 @@
+.lable_for_list {
+    display: flex;
+}
+
+.first_colum {
+    min-width: 7%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: blue;
+    border-radius: 3px;
+}
+
+.second_colum {
+    min-width: 22%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: blue;
+    border-radius: 3px;
+}

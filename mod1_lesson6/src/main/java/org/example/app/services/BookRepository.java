@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Repository
 public class BookRepository implements ProjectRepository<Book> {
@@ -42,8 +43,9 @@ public class BookRepository implements ProjectRepository<Book> {
         if(isNumeric(inputString)){
 
             Integer size=Integer.valueOf(inputString);
+            System.out.println(size+"===========");
             for(Book book:retreiveAll()){
-                if(book.getSize()==size){
+                if(Objects.equals(book.getSize(), size)){
                     repo.remove(book);
                     logger.info("matches by size - remove book completed: " + book);
                     flag++;

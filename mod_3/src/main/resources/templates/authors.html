@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="/assets/css/authors.css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<a th:href="@{main}">На главную</a>
+    <h1>
+        Authors in data base
+    </h1>
+    <table id="author">
+        <div class="lable_for_list">
+            <div class="first_colum">id
+            </div>
+            <div class="second_colum">Last name
+            </div>
+            <div class="second_colum">First name
+            </div>
+            <div class="second_colum">Patronymik
+            </div>
+            <div class="second_colum">Birthday
+            </div>
+
+        </div>
+
+        <div class="lable_for_list" th:each="author : ${authorList}">
+            <div class="first_colum" th:text="${author.id}">sd
+            </div>
+            <div class="second_colum" th:text="${author.lastName}">sd
+            </div>
+            <div class="second_colum" th:text="${author.firstName}">sd
+            </div>                                      
+            <div class="second_colum" th:text="${author.patronymic}">sd
+            </div>
+            <div class="second_colum" th:text="${author.birthday}">sd
+            </div>
+        </div>
+    </table>
+</body>
+
+</html>

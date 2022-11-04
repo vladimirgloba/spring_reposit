@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/images/login.css}"/>
+    <title>book</title>
+
+</head>
+
+<body>
+<section class="container">
+    <div class="login">
+        <h1>login & password +</h1>
+        <form method="post" th:action="@{/login/auth}" th:object="${loginForm}" th:field="*{username}">
+            <p><input type="text" name="login" value="" placeholder="Логин или Email" th:field="*{username}"></p>
+            <p><input type="password" name="password" value="" placeholder="Пароль" th:field="*{password}"></p>
+
+            <p class="submit"><input type="submit" name="commit" value="login"></p>
+        </form>
+    </div>
+    <form action="post" th:action="@{/login/auth}">
+
+    </form>
+</section>
+
+</body>
+
+</html>
