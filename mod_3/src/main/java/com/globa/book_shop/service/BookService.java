@@ -37,7 +37,6 @@ public class BookService {
                 "price  VARCHAR(250) DEFAULT NULL\n" +
                 ");";
         jdbcTemplate.update(sqlForCreateTableBook);
-
     }
 
     public void createTableAuthor() {
@@ -57,10 +56,8 @@ public class BookService {
         jdbcTemplate.query("select author from books", (ResultSet rs, int rownum) ->
                 nameList.add(rs.getString(1)));
 
-
         String bufferQuery = "";
         for (String str : nameList) {
-
             List<String> myList = new ArrayList<String>(Arrays.asList(str.split(" ")));
             if (myList.size() == 2) {
                 myList.add("");
@@ -106,7 +103,7 @@ public class BookService {
 
     }
 
-    public List<Book> getBooksData() {
+    public List<Book> getBookList() {
         List<Book> books = jdbcTemplate.query("SELECT * FROM book", (ResultSet rs, int rownum) -> {
             Book book = new Book();
             book.setId(rs.getInt("id"));

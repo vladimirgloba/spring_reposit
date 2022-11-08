@@ -38,10 +38,10 @@ $(document).ready(function() {
             </h1>
             <div class="Section">
                 <div class="Authors" >
-                    <div class="Authors-links" >
-                        <div style="display:flex" th:each="entry:${authorsMap}">
+                    <div class="Authors-links" th:each="entry:${authorsMap}" style="display:flex">
+
                         <a class="Authors-link" th:href="${'#' + entry.key}"  th:text="${entry.key}"></a>
-                        </div>
+
                     </div>
                     <div class="Authors-block" th:each = "entry:${authorsMap}" th:with="authors=${entry.value}">
                         <h2 class="Authors-title" th:id="${entry.key}" th:text="${entry.key}" >

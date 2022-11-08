@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/bookshop")
+@RequestMapping("/")
 public class AuthorsController {
     @Autowired
     BookService bookService;
+
     @GetMapping("/authors")
     public String mainPage(Model model) {
        model.addAttribute("authorList", bookService.getAuthorList());
