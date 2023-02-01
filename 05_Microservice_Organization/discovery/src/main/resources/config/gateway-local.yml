@@ -1,0 +1,21 @@
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: route
+          uri: lb://order-service
+          predicates:
+            - Path= /skillbox/api/order/**
+          filters:
+            - RewritePath =/skillbox(?<segment>/?.*), $\{segment}
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+#logging:
+#  level:
+#    org.springframework.cloud.gateway: TRACE
+
